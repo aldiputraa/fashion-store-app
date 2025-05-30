@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'screens/login_page.dart';
 import 'screens/main_screen.dart';
-import 'screens/fashion_store.dart';
-import 'screens/cart_screen.dart';
+import 'screens/shipping_address_screen.dart';
+import 'screens/payment_method_screen.dart';
+import 'screens/orders_screen.dart';
+import 'screens/settings_screen.dart';
+import 'screens/help_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,16 +17,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Fashion App',
+      title: 'Fashion Store',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: '/',
+      initialRoute: '/login',
       routes: {
-        '/': (context) => const LoginPage(),
-        '/home': (context) => const MainScreen(),
-        '/fashion_store': (context) => const FashionStore(),
+        '/login': (context) => const LoginPage(),
+        '/main': (context) => const MainScreen(),
+        '/shipping_address': (context) => const ShippingAddressScreen(),
+        '/payment_method': (context) => const PaymentMethodScreen(),
+        '/orders': (context) => const OrdersScreen(),
+        '/settings': (context) => const SettingsScreen(),
+        '/help': (context) => const HelpScreen(),
       },
     );
   }
