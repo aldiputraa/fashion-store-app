@@ -6,6 +6,7 @@ import 'screens/payment_method_screen.dart';
 import 'screens/orders_screen.dart';
 import 'screens/settings_screen.dart';
 import 'screens/help_screen.dart';
+import 'screens/fashion_store.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         '/orders': (context) => const OrdersScreen(),
         '/settings': (context) => const SettingsScreen(),
         '/help': (context) => const HelpScreen(),
+        '/fashion_store': (context) => const FashionStore(),
       },
     );
   }

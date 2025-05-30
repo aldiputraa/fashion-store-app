@@ -18,41 +18,41 @@ class _FashionStoreState extends State<FashionStore> {
       'title': 'Blouse',
       'description':
           'Baju Blouse wanita/blouse lengan pendek/Atasan wanita/fashion wanita - navy.',
-      'price': 'Rp. 180.000',
+      'price': 'Rp 180000',
     },
     {
       'imagePath': 'assets/celana.jpeg',
       'title': 'Celana Kulot',
       'description': 'Damai - Celana Kulot wanita premium quality.',
-      'price': 'Rp. 200.000',
+      'price': 'Rp 200000',
     },
     {
       'imagePath': 'assets/hem.jpg',
       'title': 'Kemeja',
       'description':
           'Kemeja Wanita NATUSHA SHIRT baju kemeja cewek lengan panjang polos.',
-      'price': 'Rp. 190.000',
+      'price': 'Rp 190000',
     },
     {
       'imagePath': 'assets/jaket.jpg',
       'title': 'Jaket Crop',
       'description':
           'TREND TERBARU AB - Floryn Jaket Crop Wanita Hoodie Zipper Korean Style Crop Hoodie Atasan Wanita.',
-      'price': 'Rp. 300.000',
+      'price': 'Rp 300000',
     },
     {
       'imagePath': 'assets/outer.jpeg',
       'title': 'Blazer Vest',
       'description':
           'Carla blazer vest black white luaran wanita outer vest kekinian blazer hitam putih.',
-      'price': 'Rp. 200.000',
+      'price': 'Rp 200000',
     },
     {
       'imagePath': 'assets/rok.jpg',
       'title': 'Rok Linen',
       'description':
           'Bora Skirt - Rok Linen - Rok Murah - Rok Wanita - Rok kekinian - Rok Korea - Rok Panjang - Rok Adem - Rok Sehari hari.',
-      'price': 'Rp. 150.000',
+      'price': 'Rp 150000',
     },
   ];
 
@@ -101,7 +101,6 @@ class _FashionStoreState extends State<FashionStore> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Fashion Store'),
-        automaticallyImplyLeading: false,
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -217,6 +216,7 @@ class _FashionStoreState extends State<FashionStore> {
                                               'title': item['title'],
                                               'price': item['price'],
                                               'quantity': 1,
+                                              'image': item['imagePath'],
                                             });
                                           }
                                           ScaffoldMessenger.of(context).showSnackBar(
@@ -248,7 +248,11 @@ class _FashionStoreState extends State<FashionStore> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => CartScreen(cartItems)),
+            MaterialPageRoute(
+              builder: (context) => CartScreen(
+                cartItems: cartItems,
+              ),
+            ),
           );
         },
         icon: const Icon(Icons.shopping_cart),
@@ -256,7 +260,7 @@ class _FashionStoreState extends State<FashionStore> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Rp. ${getTotalPrice().toStringAsFixed(2)}',
+              'Rp ${getTotalPrice().toInt()}',
               style: const TextStyle(fontSize: 12),
             ),
             const SizedBox(height: 2),
