@@ -23,7 +23,6 @@ Aplikasi mobile toko fashion yang dikembangkan menggunakan Flutter. Aplikasi ini
 <p align="center">
   <img src="screenshots/home_screen.jpg" width="250" alt="Home Screen">
   <img src="screenshots/product_screen.jpg" width="250" alt="Product Screen">
-  <img src="screenshots/cart_screen.jpg" width="250" alt="Cart Screen">
 </p>
 
 ## Instalasi
