@@ -249,9 +249,7 @@ class _FashionStoreState extends State<FashionStore> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => CartScreen(
-                cartItems: cartItems,
-              ),
+              builder: (context) => CartScreen(),
             ),
           );
         },
