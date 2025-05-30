@@ -1,16 +1,29 @@
-# restaurant_app
+# Fashion Store App
 
-A new Flutter project.
+Aplikasi mobile toko fashion yang dikembangkan menggunakan Flutter. Aplikasi ini menyediakan pengalaman belanja fashion yang intuitif dan menarik bagi pengguna.
 
-## Getting Started
+## Fitur Utama
 
-This project is a starting point for a Flutter application.
+- Autentikasi pengguna (login/register)
+- Katalog produk fashion dengan kategori
+- Pencarian dan filter produk
+- Keranjang belanja
+- Wishlist untuk menyimpan produk favorit
+- Profil pengguna
+- Proses checkout dan pembayaran
 
-A few resources to get you started if this is your first Flutter project:
+## Teknologi
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter
+- Dart
+- Material Design
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshot
+
+[Screenshot aplikasi akan ditambahkan di sini]
+
+## Instalasi
+
+1. Clone repository ini
+2. Jalankan `flutter pub get` untuk menginstall dependencies
+3. Jalankan `flutter run` untuk memulai aplikasi
