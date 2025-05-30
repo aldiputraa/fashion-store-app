@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'help_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -173,7 +174,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   void _showCurrencyOptions() {
     final List<String> currencies = [
       'IDR (Rp)',
-      'USD ($)',
+      'USD (\$)',
       'EUR (€)',
       'GBP (£)',
       'JPY (¥)',

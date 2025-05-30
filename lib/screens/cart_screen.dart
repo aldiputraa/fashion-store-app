@@ -1,9 +1,27 @@
 import 'package:flutter/material.dart';
 
-class CartScreen extends StatelessWidget {
-  final List<Map<String, dynamic>> cartItems;
+class CartScreen extends StatefulWidget {
+  const CartScreen({Key? key}) : super(key: key);
 
-  const CartScreen(this.cartItems, {Key? key}) : super(key: key);
+  @override
+  _CartScreenState createState() => _CartScreenState();
+}
+
+class _CartScreenState extends State<CartScreen> {
+  final List<Map<String, dynamic>> cartItems = [
+    {
+      'title': 'Kemeja Putih',
+      'price': 'Rp 250000',
+      'quantity': 1,
+      'image': 'assets/hem.jpg',
+    },
+    {
+      'title': 'Celana Jeans',
+      'price': 'Rp 200000',
+      'quantity': 1,
+      'image': 'assets/celana.jpeg',
+    },
+  ];
 
   double getTotalPrice() {
     double total = 0.0;
@@ -26,7 +44,7 @@ class CartScreen extends StatelessWidget {
               child: const Text('OK'),
               onPressed: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).pop(); // Kembali ke halaman sebelumnya
+                // Navigator.of(context).pop(); // Kembali ke halaman sebelumnya
               },
             ),
           ],
@@ -95,6 +113,12 @@ class CartScreen extends StatelessWidget {
                             vertical: 4.0,
                           ),
                           child: ListTile(
+                            leading: Image.asset(
+                              item['image'],
+                              width: 50,
+                              height: 50,
+                              fit: BoxFit.cover,
+                            ),
                             title: Text(
                               item['title'],
                               style: const TextStyle(fontWeight: FontWeight.bold),
@@ -103,7 +127,7 @@ class CartScreen extends StatelessWidget {
                               '${item['price']} x ${item['quantity']}',
                             ),
                             trailing: Text(
-                              'Rp. ${(int.parse(item['price'].replaceAll(RegExp(r'[^\d]'), '')) * item['quantity']).toStringAsFixed(2)}',
+                              'Rp ${(int.parse(item['price'].replaceAll(RegExp(r'[^\d]'), '')) * item['quantity']).toString()}',
                               style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Color.fromARGB(255, 248, 0, 182),
@@ -131,7 +155,7 @@ class CartScreen extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                'Rp. ${getTotalPrice().toStringAsFixed(2)}',
+                                'Rp ${getTotalPrice().toInt()}',
                                 style: const TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,

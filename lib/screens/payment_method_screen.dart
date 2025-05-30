@@ -368,7 +368,7 @@ class PaymentConfirmationScreen extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             const Text(
-              '1. Buka aplikasi ${/* details['optionName'] */} di smartphone Anda.\n'
+              '1. Buka aplikasi E-Wallet di smartphone Anda.\n'
               '2. Scan QR code di bawah ini atau masukkan nomor tujuan.\n'
               '3. Masukkan jumlah pembayaran sesuai dengan total belanja.\n'
               '4. Konfirmasi dan selesaikan pembayaran.\n'
