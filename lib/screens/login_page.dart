@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
         setState(() {
           _isLoading = false;
         });
-        Navigator.pushReplacementNamed(context, '/home');
+        Navigator.pushReplacementNamed(context, '/main');
       });
     }
   }
@@ -267,19 +267,24 @@ class _LoginPageState extends State<LoginPage> {
                           const SizedBox(height: 20),
                           SizedBox(
                             width: double.infinity,
-                            height: 50,
                             child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: const Color.fromARGB(255, 248, 0, 182),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                              ),
                               onPressed: _isLoading ? null : (_isLogin ? _login : _register),
+                              style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(vertical: 15),
+                                backgroundColor: const Color.fromARGB(255, 248, 0, 182),
+                                disabledBackgroundColor: Colors.pink.shade200,
+                              ),
                               child: _isLoading
-                                  ? const CircularProgressIndicator(color: Colors.white)
+                                  ? const SizedBox(
+                                      height: 20,
+                                      width: 20,
+                                      child: CircularProgressIndicator(
+                                        color: Colors.white,
+                                        strokeWidth: 2,
+                                      ),
+                                    )
                                   : Text(
-                                      _isLogin ? 'MASUK' : 'DAFTAR',
+                                      _isLogin ? 'Masuk' : 'Daftar',
                                       style: const TextStyle(fontSize: 16),
                                     ),
                             ),
@@ -308,69 +313,9 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 30),
-                const Text(
-                  'Atau masuk dengan',
-                  style: TextStyle(color: Colors.white),
-                ),
-                const SizedBox(height: 15),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    _socialLoginButton(
-                      icon: Icons.g_mobiledata,
-                      color: Colors.red,
-                      onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Login dengan Google')),
-                        );
-                      },
-                    ),
-                    const SizedBox(width: 20),
-                    _socialLoginButton(
-                      icon: Icons.facebook,
-                      color: Colors.blue,
-                      onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Login dengan Facebook')),
-                        );
-                      },
-                    ),
-                  ],
-                ),
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-  
-  Widget _socialLoginButton({
-    required IconData icon,
-    required Color color,
-    required VoidCallback onPressed,
-  }) {
-    return InkWell(
-      onTap: onPressed,
-      child: Container(
-        width: 60,
-        height: 60,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          shape: BoxShape.circle,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 8,
-              offset: const Offset(0, 2),
-            ),
-          ],
-        ),
-        child: Icon(
-          icon,
-          size: 35,
-          color: color,
         ),
       ),
     );
